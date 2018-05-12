@@ -2,6 +2,7 @@
 
 * Bayonetta: `byo`
 * Bowser: `bow`
+* Bowser Jr.: `bjr`
 * Captain Falcon: `fcn`
 * Captain Olimar: `olm`
 * Cloud: `cld`
