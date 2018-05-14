@@ -1,3 +1,53 @@
+## About the Project
+
+The code portion of this project is written in [Ruby v2.5.1](https://www.ruby-lang.org/).
+
+
+## About the JSON
+
+The JSON output will be structured like this:
+
+```
+{
+	"playerId": {
+		"avatar": { (optional)
+			"large": "url", (optional)
+			"medium": "url", (optional)
+			"small": "url" (optional)
+		},
+		"id": "playerId",
+		"mains": [ (optional)
+			"shk"
+		],
+		"name": "Charles Madere",
+		"tag": "Charlezard",
+		"websites": { (optional)
+			"other": "url", (optional)
+			"twitch": "url", (optional)
+			"twitter": "url", (optional)
+			"youtube": "url" (optional)
+		}
+	},
+	"playerId": {
+		"avatar": "url", (optional)
+		"id": "playerId",
+		"mains": [ (optional)
+			"shk", "fox", "doc"
+		],
+		"name": "Declan Doyle",
+		"tag": "Imyt",
+		"websites": { (optional)
+			"other": "url", (optional)
+			"twitch": "url", (optional)
+			"twitter": "url", (optional)
+			"youtube": "url" (optional)
+		}
+	},
+	"playerId": ...
+}
+```
+
+
 ## Smash Character Values
 
 * Bayonetta: `byo`
