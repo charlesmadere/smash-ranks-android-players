@@ -12,4 +12,6 @@ File.open("GAR PR Player Roster.csv").each do |line|
 	end
 end
 
+# Write out the players as JSON into a simple text file
+
 puts "wrote out #{players.length} player(s)"
