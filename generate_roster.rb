@@ -1,5 +1,6 @@
 #!/usr/bin/ruby
 
+require "json"
 require_relative "smash_competitor.rb"
 
 PROPER_SPLITS_LENGTH = 13
@@ -25,6 +26,13 @@ File.open("GAR PR Player Roster.csv").each_with_index do |line, index|
 	end
 end
 
-# Write out the smashCompetitors as JSON into a simple text file
+smashCompetitorsHash = Hash.new
 
-puts "wrote out #{smashCompetitors.length} player(s)"
+smashCompetitors.each do |smashCompetitor|
+	smashCompetitorsHash[smashCompetitor.id] = smashCompetitor.to_json
+end
+
+# Convert smashCompetitorsHash to JSON
+# Write the JSON out to a local file
+
+puts "wrote out #{smashCompetitorsHash.length} player(s)"
