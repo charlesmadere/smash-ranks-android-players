@@ -1,3 +1,5 @@
+#!/usr/bin/ruby
+
 readFirstLine = false
 players = Array.new
 
