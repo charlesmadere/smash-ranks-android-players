@@ -8,7 +8,7 @@ smashCompetitors = Array.new
 
 File.open("GAR PR Player Roster.csv").each_with_index do |line, index|
 	if readFirstLine
-		splits = line.split(',')
+		splits = line.split(",")
 		smashCompetitor = nil
 
 		if splits.length == PROPER_SPLITS_LENGTH
