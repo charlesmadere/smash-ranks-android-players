@@ -1,5 +1,7 @@
 #!/usr/bin/ruby
 
+require_relative "smash_competitor.rb"
+
 PROPER_SPLITS_LENGTH = 13
 readFirstLine = false
 smashCompetitors = Array.new
@@ -10,19 +12,14 @@ File.open("GAR PR Player Roster.csv").each_with_index do |line, index|
 		smashCompetitor = nil
 
 		if splits.length == PROPER_SPLITS_LENGTH
-			smashCompetitor = SmashCompetitor.initialize(splits)
+			smashCompetitor = SmashCompetitor.new(splits)
 		end
 
-		if smashCompetitor == nil
-			puts "Smash Competitor at line #{index} has some data error(s)"
-		else
+		if smashCompetitor != nil && smashCompetitor.is_valid
 			smashCompetitors.push(smashCompetitor)
+		else
+			puts "Smash Competitor at line #{index} has some data error(s)"
 		end
-
-		# Attempt to read a line into a SmashCompetitor object
-		# If nil is returned, then we know that this SmashCompetitor object is invalid (it's
-		# missing some necessary fields / properties)
-		# If nil is not returned, add this SmashCompetitor to the players array
 	else
 		readFirstLine = true
 	end
