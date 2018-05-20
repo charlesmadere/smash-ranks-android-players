@@ -22,23 +22,29 @@ File.open(FILE_NAME).each_with_index do |line, index|
 			smashCompetitor = SmashCompetitor.new(splits)
 		end
 
-		if smashCompetitor != nil && smashCompetitor.is_valid
+		if smashCompetitor != nil && smashCompetitor.is_valid?
 			smashCompetitors.push(smashCompetitor)
 		else
-			puts "Smash Competitor at line #{index} has some data error(s)"
+			puts "Smash Competitor at line #{index} has data error(s)"
 		end
 	else
 		readFirstLine = true
 	end
 end
 
-smashCompetitorsHash = Hash.new
+garPrCompetitorsHash = Hash.new
 
 smashCompetitors.each do |smashCompetitor|
-	smashCompetitorsHash[smashCompetitor.id] = smashCompetitor.to_json
+	garPrId = smashCompetitor.gar_pr_id
+
+	if garPrId != nil && !garPrId.empty?
+		garPrCompetitorsHash[garPrId] = smashCompetitor.to_gar_pr_json
+	end
 end
 
-# Convert smashCompetitorsHash to JSON
+# Convert garPrCompetitorsHash to JSON
 # Write the JSON out to a local file
 
-puts "wrote out #{smashCompetitorsHash.length} player(s)"
+puts "wrote out #{garPrCompetitorsHash.length} GAR PR player(s)"
+
+# Write out the Not GAR PR players
