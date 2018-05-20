@@ -1,3 +1,8 @@
+require "uri"
+
+GAR_PR_HOST = "garpr.com"
+NOT_GAR_PR_HOST = "notgarpr.com"
+
 class SmashCompetitor
 
 	def initialize(splits)
@@ -15,8 +20,29 @@ class SmashCompetitor
 		@avatar = splits[12]
 	end
 
+	def is_gar_pr_url_valid(url, host)
+		# example GAR PR player profile URL: https://www.garpr.com/#/norcal/players/5877eb55d2994e15c7dea982
+		# example Not GAR PR player profile URL: https://www.notgarpr.com/#/newjersey/players/545c854e8ab65f127805bd6f
+
+		if url == nil
+			return false
+		end
+
+		uri = URI.parse(url)
+
+		if uri.host != host
+			return false
+		end
+
+		path = uri.path
+		puts path
+
+		return true
+	end
+	private :is_gar_pr_url_valid
+
 	def is_valid
-		return false
+		return is_gar_pr_url_valid(@garPrUrl, GAR_PR_HOST) && is_gar_pr_url_valid(@notGarPrUrl, NOT_GAR_PR_HOST)
 	end
 
 	def to_json
