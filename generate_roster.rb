@@ -3,11 +3,17 @@
 require "json"
 require_relative "smash_competitor.rb"
 
+FILE_NAME = "GAR PR Player Roster.csv"
 PROPER_SPLITS_LENGTH = 13
 readFirstLine = false
 smashCompetitors = Array.new
 
-File.open("GAR PR Player Roster.csv").each_with_index do |line, index|
+if !File.exist?(FILE_NAME)
+	puts "Roster file (#{FILE_NAME}) does not exist!"
+	return
+end
+
+File.open(FILE_NAME).each_with_index do |line, index|
 	if readFirstLine
 		splits = line.split(",")
 		smashCompetitor = nil
