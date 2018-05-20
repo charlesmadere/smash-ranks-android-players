@@ -67,9 +67,17 @@ class SmashCompetitor
 		return get_id_from_gar_pr_url(@notGarPrUrl)
 	end
 
-	def to_json
+	def to_gar_pr_json
 		if !is_valid?
-			raise "This SmashCompetitor (#{tag}) is not valid! Refusing to output as JSON."
+			raise "This SmashCompetitor (#{@tag}) is not valid! Refusing to output as JSON."
+		end
+
+		# create and return a JSON string
+	end
+
+	def to_not_gar_pr_json
+		if !is_valid?
+			raise "This SmashCompetitor (#{@tag}) is not valid! Refusing to output as JSON."
 		end
 
 		# create and return a JSON string
