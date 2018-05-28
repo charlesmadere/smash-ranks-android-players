@@ -13,6 +13,7 @@ The JSON output will be structured like this:
 		"avatar": { (optional)
 			"large": "url", (optional)
 			"medium": "url", (optional)
+			"original": "url", (optional)
 			"small": "url" (optional)
 		},
 		"id": "playerId",
