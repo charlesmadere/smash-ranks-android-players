@@ -1,4 +1,5 @@
 require "uri"
+require_relative "smash_character.rb"
 require_relative "utils.rb"
 
 GAR_PR_HOST = "garpr.com"
@@ -11,9 +12,9 @@ class SmashCompetitor
 		@notGarPrUrl = strip_string_quotes(splits[2]).downcase
 		@tag = strip_string_quotes(splits[3])
 		@realName = strip_string_quotes(splits[4])
-		@main1 = strip_string_quotes(splits[5])
-		@main2 = strip_string_quotes(splits[6])
-		@main3 = strip_string_quotes(splits[7])
+		@main1 = strip_string_quotes(splits[5]).downcase
+		@main2 = strip_string_quotes(splits[6]).downcase
+		@main3 = strip_string_quotes(splits[7]).downcase
 		@twitterUrl = strip_string_quotes(splits[8])
 		@twitchUrl = strip_string_quotes(splits[9])
 		@youtubeUrl = strip_string_quotes(splits[10])
@@ -33,6 +34,15 @@ class SmashCompetitor
 		# TODO
 	end
 	private :get_id_from_gar_pr_url
+
+	def get_smash_character_string(character)
+		if character != nil && !character.empty? && SMASH_CHARACTERS.include?(character)
+			return character
+		else
+			return nil
+		end
+	end
+	private :get_smash_character_string
 
 	def is_gar_pr_url_valid(url, host)
 		# example GAR PR player profile URL: https://www.garpr.com/#/norcal/players/5877eb55d2994e15c7dea982
@@ -60,7 +70,8 @@ class SmashCompetitor
 		return (is_gar_pr_url_valid(@garPrUrl, GAR_PR_HOST) ||
 						is_gar_pr_url_valid(@notGarPrUrl, NOT_GAR_PR_HOST)) &&
 				@tag != nil && !@tag.empty? &&
-				@realName != nil && !@realName.empty?
+				@realName != nil && !@realName.empty? &&
+				get_smash_character_string(@main1) != nil
 	end
 
 	def not_gar_pr_id
