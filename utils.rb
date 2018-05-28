@@ -1,3 +1,5 @@
+PATH = "json"
+
 def strip_string_quotes(string)
 	if string == nil || string.empty?
 		return string
@@ -17,6 +19,8 @@ def strip_string_quotes(string)
 end
 
 def write_competitors_hash_to_json_file(competitorsHash, fileName)
-	# TODO
+	# TODO convert competitorsHash to JSON
+	file = File.new("#{PATH}#{File.PATH_SEPARATOR}#{fileName}", "w+")
+	# TODO write out JSON to the file
 	return false
 end
