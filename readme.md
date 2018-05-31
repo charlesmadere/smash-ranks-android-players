@@ -1,9 +1,9 @@
-## About the Project
+## About the Project ##
 
 The code portion of this project is written in [Ruby v2.5.1](https://www.ruby-lang.org/).
 
 
-## About the JSON
+## About the JSON ##
 
 The JSON output will be structured like this:
 
@@ -49,7 +49,7 @@ The JSON output will be structured like this:
 ```
 
 
-## Smash Character Values
+## Smash Character Values ##
 
 * Bayonetta: `byo`
 * Bowser: `bow`
