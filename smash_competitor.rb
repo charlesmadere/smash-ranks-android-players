@@ -66,32 +66,120 @@ class SmashCompetitor
 	end
 	private :is_gar_pr_url_valid
 
+	def is_other_url_valid?
+		# TODO (this check can be much more stringent)
+		return @otherUrl != nil && !@otherUrl.empty?
+	end
+
+	def is_twitch_valid?
+		# TODO (this check can be much more stringent)
+		return @twitchUrl != nil && !@twitchUrl.empty?
+	end
+	private :is_twitch_valid?
+
+	def is_twitter_valid?
+		# TODO (this check can be much more stringent)
+		return @twitterUrl != nil && !@twitterUrl.empty?
+	end
+	private :is_twitter_valid?
+
+	def is_youtube_valid?
+		# TODO (this check can be much more stringent)
+		return @youtubeUrl != nil && !@youtubeUrl.empty?
+	end
+	private :is_youtube_valid?
+
 	def is_valid?
 		return (is_gar_pr_url_valid(@garPrUrl, GAR_PR_HOST) ||
 						is_gar_pr_url_valid(@notGarPrUrl, NOT_GAR_PR_HOST)) &&
 				@tag != nil && !@tag.empty? &&
-				@realName != nil && !@realName.empty? &&
-				get_smash_character_string(@main1) != nil
+				@realName != nil && !@realName.empty?
 	end
 
 	def not_gar_pr_id
 		return get_id_from_gar_pr_url(@notGarPrUrl)
 	end
 
-	def to_gar_pr_json
-		if !is_valid?
-			raise "This SmashCompetitor (#{@tag}) is not valid! Refusing to output as JSON."
-		end
-
-		# create and return a JSON string
+	def to_gar_pr_hash
+		hash = to_hash
+		hash["id"] = gar_pr_id
+		return hash
 	end
 
-	def to_not_gar_pr_json
+	def to_hash
 		if !is_valid?
-			raise "This SmashCompetitor (#{@tag}) is not valid! Refusing to output as JSON."
+			raise "This SmashCompetitor (#{tag}) is not valid! Refusing to output hash."
 		end
 
-		# create and return a JSON string
+		hash = Hash.new
+		hash["name"] = @name
+		hash["tag"] = @tag
+
+		avatar = Hash.new
+		addedAvatar = false
+
+		if @avatar != nil && !@avatar.empty?
+			# TODO
+		end
+
+		if addedAvatar
+			hash["avatar"] = avatar
+		end
+
+		main1 = get_smash_character_string(@main1)
+		main2 = get_smash_character_string(@main2)
+		main3 = get_smash_character_string(@main3)
+
+		if main1 != nil && !main1.empty?
+			mains = Array.new
+			mains.push(main1)
+
+			if main2 != nil && !main2.empty?
+				mains.push(main2)
+			end
+
+			if main3 != nil && !main3.empty?
+				mains.push(main3)
+			end
+
+			hash["mains"] = mains
+		end
+
+		websites = Hash.new
+		addedWebsite = false
+
+		if is_twitch_valid?
+			websites["twitch"] = @twitchUrl
+			addedWebsite = true
+		end
+
+		if is_twitter_valid?
+			websites["twitter"] = @twitterUrl
+			addedWebsite = true
+		end
+
+		if is_youtube_valid?
+			websites["youtube"] = @youtubeUrl
+			addedWebsite = true
+		end
+
+		if is_other_url_valid?
+			websites["other"] = @otherUrl
+			addedWebsite = true
+		end
+
+		if addedWebsite
+			hash["websites"] = websites
+		end
+
+		return hash
+	end
+	private :to_hash
+
+	def to_not_gar_pr_hash
+		hash = to_hash
+		hash["id"] = not_gar_pr_id
+		return hash
 	end
 
 end

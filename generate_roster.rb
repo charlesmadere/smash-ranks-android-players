@@ -48,7 +48,9 @@ smashCompetitors.each do |smashCompetitor|
 	end
 end
 
-if write_competitors_hash_to_json_file(garPrCompetitorsHash, GAR_PR_FILE_NAME)
+puts garPrCompetitorsHash
+
+if write_competitors_to_json_file(garPrCompetitorsHash, GAR_PR_FILE_NAME)
 	puts "Wrote out #{garPrCompetitorsHash.length} GAR PR player(s)."
 else
 	puts "Failed to write out GAR PR competitors file."
@@ -64,7 +66,7 @@ smashCompetitors.each do |smashCompetitor|
 	end
 end
 
-if write_competitors_hash_to_json_file(notGarPrCompetitorsHash, NOT_GAR_PR_FILE_NAME)
+if write_competitors_to_json_file(notGarPrCompetitorsHash, NOT_GAR_PR_FILE_NAME)
 	puts "Wrote out #{notGarPrCompetitorsHash.length} Not GAR PR player(s)."
 else
 	puts "Failed to write out Not GAR PR competitors file."

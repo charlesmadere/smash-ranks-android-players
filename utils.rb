@@ -18,18 +18,19 @@ def strip_string_quotes(string)
 	return string.strip
 end
 
-def write_competitors_hash_to_json_file(competitorsHash, fileName)
-	filePath = "#{PATH}#{File.PATH_SEPARATOR}#{fileName}"
+def write_competitors_to_json_file(competitorsHash, fileName)
+	filePath = "#{PATH}#{File::SEPARATOR}#{fileName}"
 
 	if competitorsHash == nil || competitorsHash.empty?
-		File.delete(filePath)
+		if File.exists?(filePath)
+			File.delete(filePath)
+		end
+
 		return true
 	end
 
-	file = File.new(filePath, "w+")
+	competitorsJson = JSON.parse(competitorsHash)
+	File.write(filePath, competitorsJson)
 
-	# TODO convert competitorsHash to JSON
-	# TODO write out JSON to the file
-
-	return false
+	return true
 end
