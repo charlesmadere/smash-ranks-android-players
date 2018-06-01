@@ -1,3 +1,5 @@
+require "json"
+
 PATH = "json"
 
 def strip_string_quotes(string)
@@ -19,18 +21,19 @@ def strip_string_quotes(string)
 end
 
 def write_competitors_to_json_file(competitorsHash, fileName)
-	filePath = "#{PATH}#{File::SEPARATOR}#{fileName}"
+	fileDirectory = "#{PATH}"
 
-	if competitorsHash == nil || competitorsHash.empty?
-		if File.exists?(filePath)
-			File.delete(filePath)
-		end
-
-		return true
+	if !File.exist?(fileDirectory)
+		Dir.mkdir(fileDirectory)
 	end
 
-	competitorsJson = JSON.parse(competitorsHash)
-	File.write(filePath, competitorsJson)
+	filePath = "#{fileDirectory}#{File::SEPARATOR}#{fileName}"
 
-	return true
+	File.open(filePath, "w") { |file|
+		if competitorsHash == nil || competitorsHash.empty?
+			file.write("{}")
+		else
+			file.write(competitorsHash.to_json)
+		end
+	}
 end
