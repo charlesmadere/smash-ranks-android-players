@@ -15,18 +15,18 @@ YOUTUBE_HOST = "youtube.com"
 class SmashCompetitor
 
 	def initialize(splits)
-		@garPrUrl = strip_string_quotes(splits[1]).downcase
-		@notGarPrUrl = strip_string_quotes(splits[2]).downcase
-		@tag = strip_string_quotes(splits[3])
-		@realName = strip_string_quotes(splits[4])
-		@main1 = strip_string_quotes(splits[5]).downcase
-		@main2 = strip_string_quotes(splits[6]).downcase
-		@main3 = strip_string_quotes(splits[7]).downcase
-		@twitterUrl = strip_string_quotes(splits[8])
-		@twitchUrl = strip_string_quotes(splits[9])
-		@youtubeUrl = strip_string_quotes(splits[10])
-		@otherUrl = strip_string_quotes(splits[11])
-		@avatar = strip_string_quotes(splits[12])
+		@garPrUrl = splits[1].strip.downcase
+		@notGarPrUrl = splits[2].strip.downcase
+		@tag = splits[3].strip
+		@realName = splits[4].strip
+		@main1 = splits[5].strip.downcase
+		@main2 = splits[6].strip.downcase
+		@main3 = splits[7].strip.downcase
+		@twitterUrl = splits[8].strip
+		@twitchUrl = splits[9].strip
+		@youtubeUrl = splits[10].strip
+		@otherUrl = splits[11].strip
+		@avatar = splits[12].strip
 	end
 
 	def gar_pr_id
