@@ -68,9 +68,8 @@ class SmashCompetitor
 			return false
 		end
 
-		return uri.scheme != nil && !uri.scheme.empty? &&
-				uri.host != nil && !uri.host.empty?
 		uri = URI.parse(otherUrl)
+		return uri.scheme == HTTPS_SCHEME && uri.host != nil && !uri.host.empty?
 	end
 
 	def is_twitch_valid?
