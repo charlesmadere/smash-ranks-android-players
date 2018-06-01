@@ -1,6 +1,5 @@
 require "uri"
 require_relative "smash_character.rb"
-require_relative "utils.rb"
 
 HTTPS_SCHEME = "https"
 GAR_PR_HOST = "garpr.com"

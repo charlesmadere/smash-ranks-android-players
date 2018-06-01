@@ -1,8 +1,8 @@
 #!/usr/bin/ruby
 
 require "csv"
+require_relative "file_utils.rb"
 require_relative "smash_competitor.rb"
-require_relative "utils.rb"
 
 GAR_PR_FILE_NAME = "gar_pr.json"
 GAR_PR_FILE_PATH = "json#{File::SEPARATOR}"
