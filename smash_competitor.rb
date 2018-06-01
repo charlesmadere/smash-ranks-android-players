@@ -38,7 +38,7 @@ class SmashCompetitor
 			return nil
 		end
 
-		uri = URI(url)
+		uri = URI.parse(url)
 
 		if !uri.host.end_with?(host)
 			return nil
@@ -68,9 +68,9 @@ class SmashCompetitor
 			return false
 		end
 
-		uri = URI(otherUrl)
 		return uri.scheme != nil && !uri.scheme.empty? &&
 				uri.host != nil && !uri.host.empty?
+		uri = URI.parse(otherUrl)
 	end
 
 	def is_twitch_valid?
