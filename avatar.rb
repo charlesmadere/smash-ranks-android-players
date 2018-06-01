@@ -1,0 +1,5 @@
+class Avatar
+
+    # TODO
+
+end
