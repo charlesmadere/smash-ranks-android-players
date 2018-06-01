@@ -4,12 +4,13 @@ require "csv"
 require_relative "smash_competitor.rb"
 require_relative "utils.rb"
 
-ROSTER_FILE_NAME = "GAR PR Player Roster.csv"
 GAR_PR_FILE_NAME = "gar_pr.json"
+GAR_PR_FILE_PATH = "json#{File::SEPARATOR}"
 NOT_GAR_PR_FILE_NAME = "not_gar_pr.json"
+NOT_GAR_PR_FILE_PATH = "json#{File::SEPARATOR}"
 PROPER_ROW_LENGTH = 13
+ROSTER_FILE_NAME = "GAR PR Player Roster.csv"
 
-readFirstLine = false
 smashCompetitors = Array.new
 
 if !File.exist?(ROSTER_FILE_NAME)
@@ -34,7 +35,6 @@ end
 puts "Read in #{smashCompetitors.length} player(s)."
 
 garPrCompetitorsHash = Hash.new
-
 smashCompetitors.each do |smashCompetitor|
 	garPrId = smashCompetitor.gar_pr_id
 
@@ -43,14 +43,11 @@ smashCompetitors.each do |smashCompetitor|
 	end
 end
 
-if write_competitors_to_json_file(garPrCompetitorsHash, GAR_PR_FILE_NAME)
-	puts "Wrote out #{garPrCompetitorsHash.length} GAR PR player(s)."
-else
-	puts "Failed to write out GAR PR competitors file."
-end
+write_competitors_to_json_file(garPrCompetitorsHash, GAR_PR_FILE_PATH, GAR_PR_FILE_NAME)
+puts "Wrote out #{garPrCompetitorsHash.length} GAR PR player(s) to #{GAR_PR_FILE_PATH}#{GAR_PR_FILE_NAME}"
+
 
 notGarPrCompetitorsHash = Hash.new
-
 smashCompetitors.each do |smashCompetitor|
 	notGarPrId = smashCompetitor.not_gar_pr_id
 
@@ -59,8 +56,5 @@ smashCompetitors.each do |smashCompetitor|
 	end
 end
 
-if write_competitors_to_json_file(notGarPrCompetitorsHash, NOT_GAR_PR_FILE_NAME)
-	puts "Wrote out #{notGarPrCompetitorsHash.length} Not GAR PR player(s)."
-else
-	puts "Failed to write out Not GAR PR competitors file."
-end
+write_competitors_to_json_file(notGarPrCompetitorsHash, NOT_GAR_PR_FILE_PATH, NOT_GAR_PR_FILE_NAME)
+puts "Wrote out #{notGarPrCompetitorsHash.length} GAR PR player(s) to #{NOT_GAR_PR_FILE_PATH}#{NOT_GAR_PR_FILE_NAME}"
