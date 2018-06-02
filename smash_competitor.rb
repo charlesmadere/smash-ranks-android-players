@@ -26,6 +26,7 @@ class SmashCompetitor
 		@youtubeUrl = splits[10].strip
 		@otherUrl = splits[11].strip
 		@avatar = splits[12].strip
+		@agree = splits[13].strip
 	end
 
 	def gar_pr_id
@@ -111,7 +112,8 @@ class SmashCompetitor
 		return (is_gar_pr_url_valid(@garPrUrl, GAR_PR_HOST) ||
 						is_gar_pr_url_valid(@notGarPrUrl, NOT_GAR_PR_HOST)) &&
 				@tag != nil && !@tag.empty? &&
-				@realName != nil && !@realName.empty?
+				@realName != nil && !@realName.empty? &&
+				"Agree".casecmp(@agree).zero?
 	end
 
 	def not_gar_pr_id

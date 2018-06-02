@@ -1,6 +1,14 @@
-#################
-## Android
-#################
+######################
+## Project Specific ##
+######################
+
+GAR PR Player Roster.csv
+json/
+
+
+#############
+## Android ##
+#############
 
 # Built application files
 # *.apk
@@ -27,9 +35,9 @@ local.properties
 proguard/
 
 
-#################
-## Eclipse
-#################
+#############
+## Eclipse ##
+#############
 
 *.pydevproject
 .metadata
@@ -63,9 +71,9 @@ local.properties
 .texlipse
 
 
-#################
-## Fabric
-#################
+############
+## Fabric ##
+############
 
 crashlytics.properties
 crashlytics-build.properties
@@ -73,9 +81,9 @@ com_crashlytics_export_strings.xml
 fabric.properties
 
 
-#################
-## JetBrains
-#################
+###############
+## JetBrains ##
+###############
 
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
@@ -131,9 +139,9 @@ fabric.properties
 .idea/httpRequests
 
 
-#################
-## Linux
-#################
+###########
+## Linux ##
+###########
 
 *~
 
@@ -150,26 +158,26 @@ fabric.properties
 .nfs*
 
 
-#################
-## Misc
-#################
+##########
+## Misc ##
+##########
 
 com.crashlytics.settings.json
 session_analytics*.tap
 session_analytics_to_send
 
 
-#################
-## Notepad++
-#################
+###############
+## Notepad++ ##
+###############
 
 # Notepad++ backups #
 *.bak
 
 
-#################
-## OSX
-#################
+#########
+## OSX ##
+#########
 
 # General
 .DS_Store
@@ -200,9 +208,9 @@ Temporary Items
 .apdisk
 
 
-#################
-## Ruby
-#################
+##########
+## Ruby ##
+##########
 
 *.gem
 *.rbc
@@ -256,9 +264,9 @@ build-iPhoneSimulator/
 .rvmrc
 
 
-#################
-## Sublime Text
-#################
+##################
+## Sublime Text ##
+##################
 
 # Cache files for Sublime Text
 *.tmlanguage.cache
@@ -292,9 +300,9 @@ bh_unicode_properties.cache
 GitHub.sublime-settings
 
 
-#################
-## Vim
-#################
+#########
+## Vim ##
+#########
 
 # Swap
 [._]*.s[a-v][a-z]
@@ -314,9 +322,9 @@ tags
 [._]*.un~
 
 
-#################
-## Windows
-#################
+#############
+## Windows ##
+#############
 
 # Windows thumbnail cache files
 Thumbs.db
