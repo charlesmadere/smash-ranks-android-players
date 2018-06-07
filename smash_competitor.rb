@@ -1,4 +1,5 @@
 require "uri"
+require_relative "file_utils.rb"
 require_relative "smash_character.rb"
 
 HTTPS_SCHEME = "https"
@@ -151,18 +152,6 @@ class SmashCompetitor
 		hash["name"] = @realName
 		hash["tag"] = @tag
 
-		avatar = Hash.new
-		addedAvatar = false
-
-		if @avatar != nil && !@avatar.empty?
-			# TODO avatar logic, this can potentially be tricky as we might want to do some image
-			# processing so that we can have images of different sizes.
-		end
-
-		if addedAvatar
-			hash["avatar"] = avatar
-		end
-
 		main1 = get_smash_character(@main1)
 
 		if main1 != nil && !main1.empty?
@@ -208,6 +197,20 @@ class SmashCompetitor
 
 		if addedWebsite
 			hash["websites"] = websites
+		end
+
+		if @avatar != nil && !@avatar.empty?
+			avatar = nil
+
+			if gar_pr_id != nil 
+				avatar = download_image_from_google_drive(gar_pr_id, @avatar)
+			elsif not_gar_pr_id != nil
+				avatar = download_image_from_google_drive(not_gar_pr_id, @avatar)
+			end
+
+			if avatar != nil && !avatar.empty?
+				hash["avatar"] = avatar
+			end
 		end
 
 		return hash
