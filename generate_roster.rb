@@ -8,21 +8,42 @@ GAR_PR_FILE_NAME = "gar_pr.json"
 GAR_PR_FILE_PATH = "json#{File::SEPARATOR}"
 NOT_GAR_PR_FILE_NAME = "not_gar_pr.json"
 NOT_GAR_PR_FILE_PATH = "json#{File::SEPARATOR}"
-PROPER_ROW_LENGTH = 14
-ROSTER_FILE_NAME = "GAR PR Player Roster.csv"
+PROPER_ROW_LENGTH = 15
+RESPONSES_FILE_NAME = "GAR PR Player Roster (Responses).csv"
+SEEDS_FILE_NAME = "GAR PR Player Roster (Seeds).csv"
 
 
-if !File.exist?(ROSTER_FILE_NAME)
-	puts "Roster file (#{ROSTER_FILE_NAME}) does not exist!"
-	return
+smashCompetitors = Array.new
+
+# This section reads in seeds from the CSV file (if it exists)
+
+if File.exist?(SEEDS_FILE_NAME)
+	CSV.foreach(SEEDS_FILE_NAME, headers: true, skip_blanks: true) do |row|
+		smashCompetitor = nil
+
+		if row.length == PROPER_ROW_LENGTH
+			smashCompetitor = SmashCompetitor.new(row)
+		end
+
+		if smashCompetitor != nil && smashCompetitor.is_valid?
+			smashCompetitors.push(smashCompetitor)
+		else
+			puts "Smash Competitor seed has data error(s): #{row}"
+		end
+	end
+end
+
+puts "Read in #{smashCompetitors.length} seed(s) from #{SEEDS_FILE_NAME}."
+
+
+if !File.exist?(RESPONSES_FILE_NAME)
+	raise "Roster file (#{RESPONSES_FILE_NAME}) does not exist!"
 end
 
 
 # This section reads in player data from the CSV file
 
-smashCompetitors = Array.new
-
-CSV.foreach(ROSTER_FILE_NAME, headers: true, skip_blanks: true) do |row|
+CSV.foreach(RESPONSES_FILE_NAME, headers: true, skip_blanks: true) do |row|
 	smashCompetitor = nil
 
 	if row.length == PROPER_ROW_LENGTH
@@ -32,11 +53,11 @@ CSV.foreach(ROSTER_FILE_NAME, headers: true, skip_blanks: true) do |row|
 	if smashCompetitor != nil && smashCompetitor.is_valid?
 		smashCompetitors.push(smashCompetitor)
 	else
-		puts "Smash Competitor at line #{index} has data error(s)."
+		puts "Smash Competitor has data error(s): #{row}"
 	end
 end
 
-puts "Read in #{smashCompetitors.length} player(s) from #{ROSTER_FILE_NAME}."
+puts "Now have #{smashCompetitors.length} after reading from #{RESPONSES_FILE_NAME}."
 
 
 # This section creates a Hash of valid GAR PR players and builds up their data into JSON
