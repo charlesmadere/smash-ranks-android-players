@@ -42,11 +42,41 @@ def download_image(url, path)
 
 	original = "#{path}#{File::SEPARATOR}original.jpg"
 
-	image = MiniMagick::Image.open(url)
+	image = MiniMagick::Image.open(url) do |b|
+		b.format "jpg"
+	end
+
 	image.write(original)
 
 	hash = Hash.new
 	hash["original"] = original
+
+	image = MiniMagick::Image.open(image.path) do |b|
+		b.format "jpg"
+		b.resize "x32"
+	end
+
+	small = "#{path}#{File::SEPARATOR}small.jpg"
+	image.write(small)
+	hash["small"] = small
+
+	image = MiniMagick::Image.open(image.path) do |b|
+		b.format "jpg"
+		b.resize "x64"
+	end
+
+	medium = "#{path}#{File::SEPARATOR}medium.jpg"
+	image.write(medium)
+	hash["medium"] = medium
+
+	image = MiniMagick::Image.open(image.path) do |b|
+		b.format "jpg"
+		b.resize "x96"
+	end
+
+	large = "#{path}#{File::SEPARATOR}large.jpg"
+	image.write(large)
+	hash["large"] = large
 
 	return hash
 end
