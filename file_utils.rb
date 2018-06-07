@@ -53,7 +53,7 @@ def download_image(url, path)
 
 	image = MiniMagick::Image.open(image.path) do |b|
 		b.format "jpg"
-		b.resize "x32"
+		b.resize "32x32>"
 	end
 
 	small = "#{path}#{File::SEPARATOR}small.jpg"
@@ -62,7 +62,7 @@ def download_image(url, path)
 
 	image = MiniMagick::Image.open(image.path) do |b|
 		b.format "jpg"
-		b.resize "x64"
+		b.resize "64x64>"
 	end
 
 	medium = "#{path}#{File::SEPARATOR}medium.jpg"
@@ -71,7 +71,7 @@ def download_image(url, path)
 
 	image = MiniMagick::Image.open(image.path) do |b|
 		b.format "jpg"
-		b.resize "x96"
+		b.resize "96x96>"
 	end
 
 	large = "#{path}#{File::SEPARATOR}large.jpg"
