@@ -11,22 +11,38 @@ YOUTUBE_HOST = "youtube.com"
 # example GAR PR player profile URL: https://www.garpr.com/#/norcal/players/5877eb55d2994e15c7dea982
 # example Not GAR PR player profile URL: https://www.notgarpr.com/#/newjersey/players/545c854e8ab65f127805bd6f
 
+def safe_strip(string)
+	if string == nil
+		return nil
+	else
+		return string.strip
+	end
+end
+
+def safe_strip_and_downcase(string)
+	if string == nil
+		return nil
+	else
+		return string.strip.downcase
+	end
+end
+
 class SmashCompetitor
 
 	def initialize(splits)
-		@garPrUrl = splits[1].strip.downcase
-		@notGarPrUrl = splits[2].strip.downcase
-		@tag = splits[3].strip
-		@realName = splits[4].strip
-		@main1 = splits[5].strip.downcase
-		@main2 = splits[6].strip.downcase
-		@main3 = splits[7].strip.downcase
-		@twitterUrl = splits[8].strip
-		@twitchUrl = splits[9].strip
-		@youtubeUrl = splits[10].strip
-		@otherUrl = splits[11].strip
-		@avatar = splits[12].strip
-		@agree = splits[13].strip
+		@garPrUrl = safe_strip_and_downcase(splits[1])
+		@notGarPrUrl = safe_strip_and_downcase(splits[12])
+		@tag = safe_strip(splits[2])
+		@realName = safe_strip(splits[3])
+		@main1 = safe_strip_and_downcase(splits[4])
+		@main2 = safe_strip_and_downcase(splits[5])
+		@main3 = safe_strip_and_downcase(splits[6])
+		@twitterUrl = safe_strip(splits[7])
+		@twitchUrl = safe_strip(splits[8])
+		@youtubeUrl = safe_strip(splits[9])
+		@otherUrl = safe_strip(splits[10])
+		@avatar = safe_strip(splits[11])
+		@agree = safe_strip(splits[13])
 	end
 
 	def gar_pr_id
