@@ -1,5 +1,0 @@
-class Avatar
-
-    # TODO
-
-end
