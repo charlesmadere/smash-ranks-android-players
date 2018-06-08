@@ -40,43 +40,47 @@ def download_image(url, path)
 		Dir.mkdir(path)
 	end
 
-	original = "#{path}#{File::SEPARATOR}original.jpg"
-
-	image = MiniMagick::Image.open(url) do |b|
+	originalImage = MiniMagick::Image.open(url) do |b|
 		b.format "jpg"
 	end
 
-	image.write(original)
-
+	originalPath = "#{path}#{File::SEPARATOR}original.jpg"
+	originalImage.write(originalPath)
 	hash = Hash.new
-	hash["original"] = original
+	hash["original"] = originalPath
 
-	image = MiniMagick::Image.open(image.path) do |b|
-		b.format "jpg"
-		b.resize "32x32>"
+	if originalImage.dimensions[0] > 80
+		smallImage = MiniMagick::Image.open(originalPath)
+		smallImage.format "jpg"
+		smallImage.resize "80x80>"
+
+		smallPath = "#{path}#{File::SEPARATOR}small.jpg"
+		smallImage.write(smallPath)
+
+		hash["small"] = smallPath
 	end
 
-	small = "#{path}#{File::SEPARATOR}small.jpg"
-	image.write(small)
-	hash["small"] = small
+	if originalImage.dimensions[0] > 160
+		mediumImage = MiniMagick::Image.open(originalPath)
+		mediumImage.format "jpg"
+		mediumImage.resize "160x160>"
 
-	image = MiniMagick::Image.open(image.path) do |b|
-		b.format "jpg"
-		b.resize "64x64>"
+		mediumPath = "#{path}#{File::SEPARATOR}medium.jpg"
+		mediumImage.write(mediumPath)
+
+		hash["medium"] = mediumPath
 	end
 
-	medium = "#{path}#{File::SEPARATOR}medium.jpg"
-	image.write(medium)
-	hash["medium"] = medium
+	if originalImage.dimensions[0] > 320
+		largeImage = MiniMagick::Image.open(originalPath)
+		largeImage.format "jpg"
+		largeImage.resize "320x320>"
 
-	image = MiniMagick::Image.open(image.path) do |b|
-		b.format "jpg"
-		b.resize "96x96>"
+		largePath = "#{path}#{File::SEPARATOR}large.jpg"
+		largeImage.write(largePath)
+
+		hash["large"] = largePath
 	end
-
-	large = "#{path}#{File::SEPARATOR}large.jpg"
-	image.write(large)
-	hash["large"] = large
 
 	return hash
 end
