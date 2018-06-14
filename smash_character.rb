@@ -39,6 +39,7 @@ GANONDORF = SmashCharacter.new("Ganondorf", "gnn")
 GRENINJA = SmashCharacter.new("Greninja", "grn")
 ICE_CLIMBERS = SmashCharacter.new("Ice Climbers", "ics")
 IKE = SmashCharacter.new("Ike", "ike")
+INKLING = SmashCharacter.new("Inkling", "ink")
 JIGGLYPUFF = SmashCharacter.new("Jigglypuff", "puf")
 KING_DEDEDE = SmashCharacter.new("King Dedede", "ddd")
 KIRBY = SmashCharacter.new("Kirby", "kby")
@@ -65,6 +66,7 @@ PICHU = SmashCharacter.new("Pichu", "pic")
 PIKACHU = SmashCharacter.new("Pikachu", "pik")
 PIT = SmashCharacter.new("Pit", "pit")
 POKEMON_TRAINER = SmashCharacter.new("Pokémon Trainer", "pkt")
+RIDLEY = SmashCharacter.new("Ridley", "rid")
 ROB = SmashCharacter.new("R.O.B.", "rob")
 ROBIN = SmashCharacter.new("Robin", "rbn")
 ROSALINA = SmashCharacter.new("Rosalina", "ros")
@@ -105,6 +107,7 @@ SMASH_CHARACTERS = [
     GRENINJA,
     ICE_CLIMBERS,
     IKE,
+    INKLING,
     JIGGLYPUFF,
     KING_DEDEDE,
     KIRBY,
@@ -131,6 +134,7 @@ SMASH_CHARACTERS = [
     PIKACHU,
     PIT,
     POKEMON_TRAINER,
+    RIDLEY,
     ROB,
     ROBIN,
     ROSALINA,

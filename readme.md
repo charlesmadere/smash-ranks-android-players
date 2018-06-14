@@ -69,6 +69,7 @@ The JSON output will be structured like this:
 * Greninja: `grn`
 * Ice Climbers: `ics`
 * Ike: `ike`
+* Inkling: `ink`
 * Jigglypuff: `puf`
 * King Dedede: `ddd`
 * Kirby: `kby`
@@ -95,6 +96,7 @@ The JSON output will be structured like this:
 * Pikachu: `pik`
 * Pit: `pit`
 * Pokémon Trainer: `pkt`
+* Ridley: `rid`
 * R.O.B.: `rob`
 * Robin: `rbn`
 * Rosalina: `ros`
