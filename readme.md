@@ -1,11 +1,41 @@
+# smash-ranks-android-players #
+
+A Ruby script that will take in CSV files containing Smash player data, and then spit out JSON files and avatar images in a very easy-to-read form.
+
+
+## Android App ##
+
+This repository is primarily used by the GAR PR Android app: [[GitHub link](https://github.com/charlesmadere/smash-ranks-android)] [[Google Play Store link](https://play.google.com/store/apps/details?id=com.garpr.android)].
+
+
 ## About the Project ##
 
-The code portion of this project is written in [Ruby v2.5.1](https://www.ruby-lang.org/).
+The code portion of this project is written in [Ruby v2.5.1](https://www.ruby-lang.org/). Please make sure that you have a working Ruby installation to be able to run this code. Note that while it was developed against Ruby v2.5.1, it's very possible that it works with many other versions as well. For instance, on my MacBook Pro, I use Ruby v2.3.3, which has no problems.
+
+If you have no local installation of Ruby, please go to the main Ruby website before proceeding.
+
+This project relies on [MiniMagick](https://github.com/minimagick/minimagick), which requires that you have a working version of ImageMagick or GraphicsMagick installed.
+
+
+## How to Run the Project ##
+
+From a terminal or command line interface, run this command:
+
+```
+ruby generate_roster.rb
+```
+
+The script will then keep you informed as it progresses. And at the end, you'll see two new folders in the working directory: `avatars` and `json`, which have everything you will need.
 
 
 ## About the JSON ##
 
-The JSON output will be structured like this:
+Only fields that are expressly marked as `(optional)` have the potential to not show up in the JSON data.
+
+Note that the values in the `mains` array are always a 3 character string that directly corresponds to one of the values in the "Smash Character Values" section below. Your codebase should be made to deal with unknown values in this array, as that may mean that a new Smash Character has been added to the game that you're not yet familiar with. For example, Ridley (`rid`) and Inkling (`ink`) were recently announced for Smash Ultimate. Your code should be capable of gracefully handling them even if it hasn't been updated to explicitly support these.
+
+
+### Example JSON Schema ###
 
 ```
 {
@@ -29,7 +59,7 @@ The JSON output will be structured like this:
 			"youtube": "url" (optional)
 		}
 	},
-	"playerId": {
+	"playerId2": {
 		"avatar": "url", (optional)
 		"id": "playerId",
 		"mains": [ (optional)
@@ -44,7 +74,78 @@ The JSON output will be structured like this:
 			"youtube": "url" (optional)
 		}
 	},
-	"playerId": ...
+	"playerId3": ...
+}
+```
+
+
+### Real JSON Example ###
+
+```
+{
+  "588999c5d2994e713ad63ca7": {
+    "name": "Joseph Marquez",
+    "tag": "Mang0",
+    "mains": [
+      "fox",
+      "fco"
+    ],
+    "websites": {
+      "twitch": "https://www.twitch.tv/mang0",
+      "twitter": "https://twitter.com/C9Mang0",
+      "youtube": "https://www.youtube.com/channel/UCJLpammGMzjc4A2RfBVMbOg"
+    },
+    "id": "588999c5d2994e713ad63ca7"
+  },
+  "588999c5d2994e713ad63cac": {
+    "name": "Adam Lindgren",
+    "tag": "Armada",
+    "mains": [
+      "pch",
+      "fox",
+      "ylk"
+    ],
+    "websites": {
+      "twitch": "https://www.twitch.tv/armadaugs",
+      "twitter": "https://twitter.com/ArmadaUGS",
+      "youtube": "https://www.youtube.com/channel/UCfagwFCjnHBYRYIyBnmNAdA"
+    },
+    "id": "588999c5d2994e713ad63cac"
+  },
+  "588999c5d2994e713ad63968": {
+    "name": "Jason Zimmerman",
+    "tag": "Mew2King",
+    "mains": [
+      "mrt",
+      "shk",
+      "fox"
+    ],
+    "websites": {
+      "twitch": "https://www.twitch.tv/mew2king",
+      "twitter": "https://twitter.com/MVG_Mew2King",
+      "youtube": "https://www.youtube.com/user/therealmew2king"
+    },
+    "id": "588999c5d2994e713ad63968"
+  },
+  "587a951dd2994e15c7dea9fe": {
+    "name": "Charles Madere",
+    "tag": "Charlezard",
+    "mains": [
+      "shk"
+    ],
+    "websites": {
+      "twitch": "https://www.twitch.tv/chillinwithcharles",
+      "twitter": "https://twitter.com/charlesmadere",
+      "other": "https://github.com/charlesmadere"
+    },
+    "avatar": {
+      "original": "avatars/587a951dd2994e15c7dea9fe/original.jpg",
+      "small": "avatars/587a951dd2994e15c7dea9fe/small.jpg",
+      "medium": "avatars/587a951dd2994e15c7dea9fe/medium.jpg",
+      "large": "avatars/587a951dd2994e15c7dea9fe/large.jpg"
+    },
+    "id": "587a951dd2994e15c7dea9fe"
+  }
 }
 ```
 
