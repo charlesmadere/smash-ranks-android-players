@@ -34,19 +34,21 @@ Only fields that are expressly marked as `(optional)` have the potential to not 
 
 Note that the values in the `mains` array are always a 3 character string that directly corresponds to one of the values in the "Smash Character Values" section below. Your codebase should be made to deal with unknown values in this array, as that may mean that a new Smash Character has been added to the game that you're not yet familiar with. For example, Ridley (`rid`) and Inkling (`ink`) were recently announced for Smash Ultimate. Your code should be capable of gracefully handling them even if it hasn't been updated to explicitly support these.
 
+Also note that the `avatar` object contains relative paths for its URLs. You need to manually build up the preceding portion of the URL within your code.
+
 
 ### Example JSON Schema ###
 
 ```
 {
-	"playerId": {
+	"playerId1": {
 		"avatar": { (optional)
 			"large": "url", (optional)
 			"medium": "url", (optional)
 			"original": "url", (optional)
 			"small": "url" (optional)
 		},
-		"id": "playerId",
+		"id": "playerId1",
 		"mains": [ (optional)
 			"shk"
 		],
@@ -61,7 +63,7 @@ Note that the values in the `mains` array are always a 3 character string that d
 	},
 	"playerId2": {
 		"avatar": "url", (optional)
-		"id": "playerId",
+		"id": "playerId2",
 		"mains": [ (optional)
 			"shk", "fox", "doc"
 		],
