@@ -1,7 +1,7 @@
 require "json"
 require "uri"
 
-BASE_AVATARS_PATH = "avatars#{File::SEPARATOR}"
+BASE_AVATARS_PATH = "avatars"
 BASE_GOOGLE_DRIVE_URL = "https://docs.google.com/uc?id=%s"
 
 
@@ -23,22 +23,19 @@ require "mini_magick"
 # example google drive file link: https://drive.google.com/open?id=1VL2B29WwJCi0MaEEJufUFmha5ktNDDtD
 # example google drive file download link: https://drive.google.com/uc?id=1VL2B29WwJCi0MaEEJufUFmha5ktNDDtD
 
-def download_image(url, path)
+def download_image(url, playerId, endpoint)
 	if url == nil || url.empty?
 		raise "url can't be nil / empty"
-	elsif path == nil || path.empty?
-		raise "path can't be nil / empty"
+	elsif playerId == nil || playerId.empty?
+		raise "playerId can't be nil / empty"
+	elsif endpoint == nil || endpoint.empty?
+		raise "endpoint can't be nil / empty"
 	end
 
 	puts "Downloading #{url}..."
 
-	if !File.exist?(BASE_AVATARS_PATH)
-		Dir.mkdir(BASE_AVATARS_PATH)
-	end
-
-	if !File.exist?(path)
-		Dir.mkdir(path)
-	end
+	path = "#{BASE_AVATARS_PATH}#{File::SEPARATOR}#{endpoint}#{File::SEPARATOR}#{playerId}"
+	FileUtils.mkpath(path)
 
 	originalImage = MiniMagick::Image.open(url) do |b|
 		b.format "jpg"
@@ -85,7 +82,11 @@ def download_image(url, path)
 	return hash
 end
 
-def download_image_from_google_drive(playerId, url)
+def download_image_from_google_drive(playerId, url, endpoint)
+	if endpoint == nil || endpoint.empty?
+		raise "endpoint can't be nil / empty"
+	end
+
 	if url == nil || url.empty?
 		return nil
 	end
@@ -118,14 +119,11 @@ def download_image_from_google_drive(playerId, url)
 	googleDriveUri = URI.parse(BASE_GOOGLE_DRIVE_URL)
 	googleDriveUri.query = "id=#{fileId}"
 
-	filePath = "#{BASE_AVATARS_PATH}#{playerId}"
-	return download_image(googleDriveUri.to_s, filePath)
+	return download_image(googleDriveUri.to_s, playerId, endpoint)
 end
 
 def write_competitors_to_json_file(competitorsHash, filePath, fileName)
-	if !File.exist?(filePath)
-		Dir.mkdir(filePath)
-	end
+	FileUtils.mkpath(filePath)
 
 	File.open("#{filePath}#{fileName}", "w") { |file|
 		if competitorsHash == nil || competitorsHash.empty?

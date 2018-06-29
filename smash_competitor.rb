@@ -3,7 +3,9 @@ require_relative "file_utils.rb"
 require_relative "smash_character.rb"
 
 HTTPS_SCHEME = "https"
+GAR_PR_ENDPOINT = "gar_pr"
 GAR_PR_HOST = "garpr.com"
+NOT_GAR_PR_ENDPOINT = "not_gar_pr"
 NOT_GAR_PR_HOST = "notgarpr.com"
 TWITCH_HOST = "twitch.tv"
 TWITTER_HOST = "twitter.com"
@@ -203,9 +205,9 @@ class SmashCompetitor
 			avatar = nil
 
 			if gar_pr_id != nil 
-				avatar = download_image_from_google_drive(gar_pr_id, @avatar)
+				avatar = download_image_from_google_drive(gar_pr_id, @avatar, GAR_PR_ENDPOINT)
 			elsif not_gar_pr_id != nil
-				avatar = download_image_from_google_drive(not_gar_pr_id, @avatar)
+				avatar = download_image_from_google_drive(not_gar_pr_id, @avatar, NOT_GAR_PR_ENDPOINT)
 			end
 
 			if avatar != nil && !avatar.empty?

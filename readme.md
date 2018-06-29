@@ -141,10 +141,10 @@ Also note that the `avatar` object contains relative paths for its URLs. You nee
       "other": "https://github.com/charlesmadere"
     },
     "avatar": {
-      "original": "avatars/587a951dd2994e15c7dea9fe/original.jpg",
-      "small": "avatars/587a951dd2994e15c7dea9fe/small.jpg",
-      "medium": "avatars/587a951dd2994e15c7dea9fe/medium.jpg",
-      "large": "avatars/587a951dd2994e15c7dea9fe/large.jpg"
+      "original": "avatars/gar_pr/587a951dd2994e15c7dea9fe/original.jpg",
+      "small": "avatars/gar_pr/587a951dd2994e15c7dea9fe/small.jpg",
+      "medium": "avatars/gar_pr/587a951dd2994e15c7dea9fe/medium.jpg",
+      "large": "avatars/gar_pr/587a951dd2994e15c7dea9fe/large.jpg"
     },
     "id": "587a951dd2994e15c7dea9fe"
   }
