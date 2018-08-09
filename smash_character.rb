@@ -26,9 +26,12 @@ BOWSER = SmashCharacter.new("Bowser", "bow")
 BOWSER_JR = SmashCharacter.new("Bowser Jr.", "bjr")
 CAPTAIN_FALCON = SmashCharacter.new("Captain Falcon", "fcn")
 CAPTAIN_OLIMAR = SmashCharacter.new("Captain Olimar", "olm")
+CHARIZARD = SmashCharacter.new("Charizard", "chr")
+CHROM = SmashCharacter.new("Chrom", "chm")
 CLOUD = SmashCharacter.new("Cloud", "cld")
 CORRIN = SmashCharacter.new("Corrin", "crn")
 DARK_PIT = SmashCharacter.new("Dark Pit", "dpt")
+DARK_SAMUS = SmashCharacter.new("Dark Samus", "dks")
 DIDDY_KONG = SmashCharacter.new("Diddy Kong", "ddy")
 DOCTOR_MARIO = SmashCharacter.new("Doctor Mario", "doc")
 DONKEY_KONG = SmashCharacter.new("Donkey Kong", "dnk")
@@ -40,8 +43,10 @@ GRENINJA = SmashCharacter.new("Greninja", "grn")
 ICE_CLIMBERS = SmashCharacter.new("Ice Climbers", "ics")
 IKE = SmashCharacter.new("Ike", "ike")
 INKLING = SmashCharacter.new("Inkling", "ink")
+IVYSAUR = SmashCharacter.new("Ivysaur", "ivy")
 JIGGLYPUFF = SmashCharacter.new("Jigglypuff", "puf")
 KING_DEDEDE = SmashCharacter.new("King Dedede", "ddd")
+KING_K_ROOL = SmashCharacter.new("King K. Rool", "kkr")
 KIRBY = SmashCharacter.new("Kirby", "kby")
 LINK = SmashCharacter.new("Link", "lnk")
 LITTLE_MAC = SmashCharacter.new("Little Mac", "lmc")
@@ -66,6 +71,7 @@ PICHU = SmashCharacter.new("Pichu", "pic")
 PIKACHU = SmashCharacter.new("Pikachu", "pik")
 PIT = SmashCharacter.new("Pit", "pit")
 POKEMON_TRAINER = SmashCharacter.new("Pokémon Trainer", "pkt")
+RICTER = SmashCharacter.new("Ricter", "ric")
 RIDLEY = SmashCharacter.new("Ridley", "rid")
 ROB = SmashCharacter.new("R.O.B.", "rob")
 ROBIN = SmashCharacter.new("Robin", "rbn")
@@ -75,6 +81,7 @@ RYU = SmashCharacter.new("Ryu", "ryu")
 SAMUS = SmashCharacter.new("Samus", "sam")
 SHEIK = SmashCharacter.new("Sheik", "shk")
 SHULK = SmashCharacter.new("Shulk", "slk")
+SIMON = SmashCharacter.new("Simon", "smn")
 SNAKE = SmashCharacter.new("Snake", "snk")
 SONIC = SmashCharacter.new("Sonic", "snc")
 SQUIRTLE = SmashCharacter.new("Squirtle", "sqt")
@@ -94,9 +101,12 @@ SMASH_CHARACTERS = [
     BOWSER_JR,
     CAPTAIN_FALCON,
     CAPTAIN_OLIMAR,
+    CHARIZARD,
+    CHROM,
     CLOUD,
     CORRIN,
     DARK_PIT,
+    DARK_SAMUS,
     DIDDY_KONG,
     DOCTOR_MARIO,
     DONKEY_KONG,
@@ -108,8 +118,10 @@ SMASH_CHARACTERS = [
     ICE_CLIMBERS,
     IKE,
     INKLING,
+    IVYSAUR,
     JIGGLYPUFF,
     KING_DEDEDE,
+    KING_K_ROOL,
     KIRBY,
     LINK,
     LITTLE_MAC,
@@ -134,6 +146,7 @@ SMASH_CHARACTERS = [
     PIKACHU,
     PIT,
     POKEMON_TRAINER,
+    RICTER,
     RIDLEY,
     ROB,
     ROBIN,
@@ -143,6 +156,7 @@ SMASH_CHARACTERS = [
     SAMUS,
     SHEIK,
     SHULK,
+    SIMON,
     SNAKE,
     SONIC,
     SQUIRTLE,

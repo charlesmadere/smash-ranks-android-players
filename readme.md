@@ -159,9 +159,12 @@ Also note that the `avatar` object contains relative paths for its URLs. You nee
 * Bowser Jr.: `bjr`
 * Captain Falcon: `fcn`
 * Captain Olimar: `olm`
+* Charizard: `chr`
+* Chrom: `chm`
 * Cloud: `cld`
 * Corrin: `crn`
 * Dark Pit: `dpt`
+* Dark Samus: `dks`
 * Diddy Kong: `ddy`
 * Doctor Mario: `doc`
 * Donkey Kong: `dnk`
@@ -173,8 +176,10 @@ Also note that the `avatar` object contains relative paths for its URLs. You nee
 * Ice Climbers: `ics`
 * Ike: `ike`
 * Inkling: `ink`
+* Ivysaur: `ivy`
 * Jigglypuff: `puf`
 * King Dedede: `ddd`
+* King K. Rool: `kkr`
 * Kirby: `kby`
 * Link: `lnk`
 * Little Mac: `lmc`
@@ -199,6 +204,7 @@ Also note that the `avatar` object contains relative paths for its URLs. You nee
 * Pikachu: `pik`
 * Pit: `pit`
 * Pokémon Trainer: `pkt`
+* Ricter: `ric`
 * Ridley: `rid`
 * R.O.B.: `rob`
 * Robin: `rbn`
@@ -208,6 +214,7 @@ Also note that the `avatar` object contains relative paths for its URLs. You nee
 * Samus: `sam`
 * Sheik: `shk`
 * Shulk: `slk`
+* Simon: `smn`
 * Snake: `snk`
 * Sonic: `snc`
 * Squirtle: `sqt`
