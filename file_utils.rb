@@ -17,6 +17,7 @@ rescue LoadError
 	retry
 end
 
+require "image_magick"
 require "mini_magick"
 
 

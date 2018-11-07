@@ -41,10 +41,12 @@ FOX = SmashCharacter.new("Fox", "fox")
 GANONDORF = SmashCharacter.new("Ganondorf", "gnn")
 GRENINJA = SmashCharacter.new("Greninja", "grn")
 ICE_CLIMBERS = SmashCharacter.new("Ice Climbers", "ics")
+INCINEROAR = SmashCharacter.new("Incineroar", "inc")
 IKE = SmashCharacter.new("Ike", "ike")
 INKLING = SmashCharacter.new("Inkling", "ink")
 IVYSAUR = SmashCharacter.new("Ivysaur", "ivy")
 JIGGLYPUFF = SmashCharacter.new("Jigglypuff", "puf")
+KEN = SmashCharacter.new("Ken", "ken")
 KING_DEDEDE = SmashCharacter.new("King Dedede", "ddd")
 KING_K_ROOL = SmashCharacter.new("King K. Rool", "kkr")
 KIRBY = SmashCharacter.new("Kirby", "kby")
@@ -69,6 +71,7 @@ PALUTENA = SmashCharacter.new("Palutena", "pal")
 PEACH = SmashCharacter.new("Peach", "pch")
 PICHU = SmashCharacter.new("Pichu", "pic")
 PIKACHU = SmashCharacter.new("Pikachu", "pik")
+PIRANHA_PLANT = SmashCharacter.new("Piranha Plant", "pir")
 PIT = SmashCharacter.new("Pit", "pit")
 POKEMON_TRAINER = SmashCharacter.new("Pokémon Trainer", "pkt")
 RICTER = SmashCharacter.new("Ricter", "ric")
@@ -116,10 +119,12 @@ SMASH_CHARACTERS = [
     GANONDORF,
     GRENINJA,
     ICE_CLIMBERS,
+    INCINEROAR,
     IKE,
     INKLING,
     IVYSAUR,
     JIGGLYPUFF,
+    KEN,
     KING_DEDEDE,
     KING_K_ROOL,
     KIRBY,
@@ -144,6 +149,7 @@ SMASH_CHARACTERS = [
     PEACH,
     PICHU,
     PIKACHU,
+    PIRANHA_PLANT,
     PIT,
     POKEMON_TRAINER,
     RICTER,

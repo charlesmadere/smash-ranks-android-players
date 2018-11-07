@@ -175,9 +175,11 @@ Also note that the `avatar` object contains relative paths for its URLs. You nee
 * Greninja: `grn`
 * Ice Climbers: `ics`
 * Ike: `ike`
+* Incineroar: `inc`
 * Inkling: `ink`
 * Ivysaur: `ivy`
 * Jigglypuff: `puf`
+* Ken: `ken`
 * King Dedede: `ddd`
 * King K. Rool: `kkr`
 * Kirby: `kby`
@@ -202,6 +204,7 @@ Also note that the `avatar` object contains relative paths for its URLs. You nee
 * Peach: `pch`
 * Pichu: `pic`
 * Pikachu: `pik`
+* Piranha Plant: `pir`
 * Pit: `pit`
 * Pokémon Trainer: `pkt`
 * Ricter: `ric`
