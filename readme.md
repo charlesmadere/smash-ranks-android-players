@@ -10,7 +10,7 @@ This repository is primarily used by the GAR PR Android app: [[GitHub link](http
 
 ## About the Project ##
 
-The code portion of this project is written in [Ruby v2.5.1](https://www.ruby-lang.org/). Please make sure that you have a working Ruby installation to be able to run this code. Note that while it was developed against Ruby v2.5.1, it's very possible that it works with many other versions as well. For instance, on my MacBook Pro, I use Ruby v2.3.3, which has no problems.
+The code portion of this project is written in [Ruby v2.5.3](https://www.ruby-lang.org/). Please make sure that you have a working Ruby installation to be able to run this code. Note that while it was developed against Ruby v2.5.3, it's very possible that it works with many other versions as well. For instance, on my MacBook Pro, I use Ruby v2.3.3, which has no problems.
 
 If you have no local installation of Ruby, please go to the main Ruby website before proceeding.
 
