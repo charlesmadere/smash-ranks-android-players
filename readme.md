@@ -179,6 +179,7 @@ Also note that the `avatar` object contains relative paths for its URLs. You nee
 * Inkling: `ink`
 * Ivysaur: `ivy`
 * Jigglypuff: `puf`
+* Joker: `jok`
 * Ken: `ken`
 * King Dedede: `ddd`
 * King K. Rool: `kkr`
