@@ -37,9 +37,9 @@ class SmashCompetitor
 		@notGarPrUrl = safe_strip_and_downcase(splits[12])
 		@tag = safe_strip(splits[2])
 		@realName = safe_strip(splits[3])
-		@main1 = safe_strip_and_downcase(splits[4])
-		@main2 = safe_strip_and_downcase(splits[5])
-		@main3 = safe_strip_and_downcase(splits[6])
+		@main1 = safe_strip(splits[4])
+		@main2 = safe_strip(splits[5])
+		@main3 = safe_strip(splits[6])
 		@twitterUrl = safe_strip(splits[7])
 		@twitchUrl = safe_strip(splits[8])
 		@youtubeUrl = safe_strip(splits[9])
@@ -154,14 +154,14 @@ class SmashCompetitor
 		hash["name"] = @realName
 		hash["tag"] = @tag
 
-		main1 = get_smash_character(@main1)
+		main1 = SMASH_CHARACTERS[@main1]
 
 		if main1 != nil && !main1.empty?
 			mains = Array.new
 			mains.push(main1)
 
-			main2 = get_smash_character(@main2)
-			main3 = get_smash_character(@main3)
+			main2 = SMASH_CHARACTERS[@main2]
+			main3 = SMASH_CHARACTERS[@main3]
 
 			if main2 != nil && !main2.empty?
 				mains.push(main2)

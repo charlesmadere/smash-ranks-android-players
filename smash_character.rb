@@ -77,11 +77,3 @@ SMASH_CHARACTERS = {
     "Zelda" => "zld",
     "Zero Suit Samus" => "zss"
 }
-
-def get_smash_character(string)
-    if string == nil || string.empty?
-        return nil
-    else
-        return SMASH_CHARACTERS[string]
-    end
-end
