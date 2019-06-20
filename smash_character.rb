@@ -1,4 +1,5 @@
 SMASH_CHARACTERS = {
+    "Banjo & Kazooie" => "bnk",
     "Bayonetta" => "byo",
     "Bowser" => "bow",
     "Bowser Jr." => "bjr",
@@ -18,6 +19,7 @@ SMASH_CHARACTERS = {
     "Fox" => "fox",
     "Ganondorf" => "gnn",
     "Greninja" => "grn",
+    "Hero" => "hro",
     "Ice Climbers" => "ics",
     "Incineroar" => "inc",
     "Ike" => "ike",

@@ -154,6 +154,7 @@ Also note that the `avatar` object contains relative paths for its URLs. You nee
 
 ## Smash Character Values ##
 
+* Banjo & Kazooie: `bnk`
 * Bayonetta: `byo`
 * Bowser: `bow`
 * Bowser Jr.: `bjr`
@@ -173,6 +174,7 @@ Also note that the `avatar` object contains relative paths for its URLs. You nee
 * Fox: `fox`
 * Ganondorf: `gnn`
 * Greninja: `grn`
+* Hero: `hro`
 * Ice Climbers: `ics`
 * Ike: `ike`
 * Incineroar: `inc`
