@@ -224,6 +224,7 @@ Also note that the `avatar` object contains relative paths for its URLs. You nee
 * Snake: `snk`
 * Sonic: `snc`
 * Squirtle: `sqt`
+* Terry Bogard: `tbg`
 * Toon Link: `tlk`
 * Villager: `vlg`
 * Wario: `war`

@@ -69,6 +69,7 @@ SMASH_CHARACTERS = {
     "Snake" => "snk",
     "Sonic" => "snc",
     "Squirtle" => "sqt",
+    "Terry Bogard" => "tbg",
     "Toon Link" => "tlk",
     "Villager" => "vlg",
     "Wario" => "war",
