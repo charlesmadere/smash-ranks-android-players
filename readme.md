@@ -10,16 +10,16 @@ This repository is primarily used by the GAR PR Android app: [[GitHub link](http
 
 ## About the Project ##
 
-The code portion of this project is written in [Ruby v2.5.3](https://www.ruby-lang.org/). Please make sure that you have a working Ruby installation to be able to run this code. Note that while it was developed against Ruby v2.5.3, it's very possible that it works with many other versions as well. For instance, on my MacBook Pro, I use Ruby v2.3.3, which has no problems.
+The code portion of this project is written in [Ruby](https://www.ruby-lang.org/), specifically [Ruby `v2.6.5`](https://www.ruby-lang.org/en/news/2019/10/01/ruby-2-6-5-released/). Please make sure that you have a working Ruby installation to be able to run this code. Note that while it was developed against Ruby v2.6.5, it's very possible that it works with many other versions as well. For instance, on my MacBook Pro, I use Ruby v2.3.3, which has no problems.
 
 If you have no local installation of Ruby, please go to the main Ruby website before proceeding.
 
-This project relies on [MiniMagick](https://github.com/minimagick/minimagick), which requires that you have a working version of ImageMagick or GraphicsMagick installed.
+This project relies on [MiniMagick](https://github.com/minimagick/minimagick), which requires that you have a working version of [ImageMagick](https://imagemagick.org/index.php) or [GraphicsMagick](http://www.graphicsmagick.org/) installed.
 
 
 ## How to Run the Project ##
 
-From a terminal or command line interface, run this command:
+The script expects you to have a `GAR PR Player Roster (Responses).csv` file in the same directory as the `generate_roster.rb` file. This file is what roster data is pulled from. You can also optionally have a `GAR PR Player Roster (Seeds).csv` file to use to seed an otherwise small responses file. Then from a terminal or command line interface, run this command:
 
 ```
 ruby generate_roster.rb
