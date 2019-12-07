@@ -43,7 +43,12 @@ class SmashCompetitor
 		@twitterUrl = safe_strip(splits[7])
 		@twitchUrl = safe_strip(splits[8])
 		@youtubeUrl = safe_strip(splits[9])
+
+		# This line is being left here only to document that the "other"
+		# field isn't being used anymore. This allowed for people to put odd,
+		# strange, spammy, or potentially malicious URLs into their profile.
 		@otherUrl = safe_strip(splits[10])
+
 		@avatar = safe_strip(splits[11])
 		@agree = safe_strip(splits[13])
 	end
@@ -79,17 +84,6 @@ class SmashCompetitor
 		return id != nil && !id.empty?
 	end
 	private :is_gar_pr_url_valid
-
-	def is_other_url_valid?
-		otherUrl = @otherUrl
-
-		if otherUrl == nil || otherUrl.empty?
-			return false
-		end
-
-		uri = URI.parse(otherUrl)
-		return uri.scheme == HTTPS_SCHEME && uri.host != nil && !uri.host.empty?
-	end
 
 	def is_twitch_valid?
 		url = @twitchUrl
@@ -189,11 +183,6 @@ class SmashCompetitor
 
 		if is_youtube_valid?
 			websites["youtube"] = @youtubeUrl
-			addedWebsite = true
-		end
-
-		if is_other_url_valid?
-			websites["other"] = @otherUrl
 			addedWebsite = true
 		end
 

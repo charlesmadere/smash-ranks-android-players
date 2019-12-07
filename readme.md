@@ -55,7 +55,6 @@ Also note that the `avatar` object contains relative paths for its URLs. You nee
 		"name": "Charles Madere",
 		"tag": "Charlezard",
 		"websites": { (optional)
-			"other": "url", (optional)
 			"twitch": "url", (optional)
 			"twitter": "url", (optional)
 			"youtube": "url" (optional)
@@ -70,7 +69,6 @@ Also note that the `avatar` object contains relative paths for its URLs. You nee
 		"name": "Declan Doyle",
 		"tag": "Imyt",
 		"websites": { (optional)
-			"other": "url", (optional)
 			"twitch": "url", (optional)
 			"twitter": "url", (optional)
 			"youtube": "url" (optional)
@@ -137,8 +135,7 @@ Also note that the `avatar` object contains relative paths for its URLs. You nee
     ],
     "websites": {
       "twitch": "https://www.twitch.tv/chillinwithcharles",
-      "twitter": "https://twitter.com/charlesmadere",
-      "other": "https://github.com/charlesmadere"
+      "twitter": "https://twitter.com/charlesmadere"
     },
     "avatar": {
       "original": "avatars/gar_pr/587a951dd2994e15c7dea9fe/original.jpg",
