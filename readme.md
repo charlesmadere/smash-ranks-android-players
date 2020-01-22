@@ -155,6 +155,7 @@ Also note that the `avatar` object contains relative paths for its URLs. You nee
 * Bayonetta: `byo`
 * Bowser: `bow`
 * Bowser Jr.: `bjr`
+* Byleth: `byl`
 * Captain Falcon: `fcn`
 * Captain Olimar: `olm`
 * Charizard: `chr`

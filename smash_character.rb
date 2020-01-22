@@ -3,6 +3,7 @@ SMASH_CHARACTERS = {
     "Bayonetta" => "byo",
     "Bowser" => "bow",
     "Bowser Jr." => "bjr",
+    "Byleth" => "byl",
     "Captain Falcon" => "fcn",
     "Captain Olimar" => "olm",
     "Charizard" => "chr",
