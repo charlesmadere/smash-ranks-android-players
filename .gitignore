@@ -230,6 +230,9 @@ Temporary Items
 # Used by dotenv library to load environment variables.
 # .env
 
+# Ignore Byebug command history file.
+.byebug_history
+
 ## Specific to RubyMotion:
 .dat*
 .repl_history
@@ -265,6 +268,9 @@ build-iPhoneSimulator/
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
+
+# Used by RuboCop. Remote config files pulled in from inherit_from directive.
+# .rubocop-https?--*
 
 
 ##################
@@ -309,12 +315,15 @@ GitHub.sublime-settings
 
 # Swap
 [._]*.s[a-v][a-z]
+!*.svg  # comment out if you don't need vector files
 [._]*.sw[a-p]
-[._]s[a-v][a-z]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
 [._]sw[a-p]
 
 # Session
 Session.vim
+Sessionx.vim
 
 # Temporary
 .netrwhist
@@ -325,12 +334,25 @@ tags
 [._]*.un~
 
 
+########################
+## Visual Studio Code ##
+########################
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+
 #############
 ## Windows ##
 #############
 
 # Windows thumbnail cache files
 Thumbs.db
+Thumbs.db:encryptable
 ehthumbs.db
 ehthumbs_vista.db
 
